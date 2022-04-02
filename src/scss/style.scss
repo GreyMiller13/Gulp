@@ -1,0 +1,36 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+@import "fonts";
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #444;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        color: green;
+        @media screen and (max-width: 767px) {
+            font-size: 30px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        background-color: #fff;
+    }
+
+    .webp {
+        background: url('../img/pexels-photo.jpg') 0 0 no-repeat;
+    }
+}
